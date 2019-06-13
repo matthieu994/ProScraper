@@ -1,6 +1,6 @@
 import React, { Component } from "react"
+import { Paper, InputBase, IconButton, Icon } from "@material-ui/core"
 import Axios from "axios"
-import logo from "./logo.svg"
 import "./App.css"
 
 export default class App extends Component {
@@ -17,42 +17,19 @@ export default class App extends Component {
             .catch(err => {
                 this.setState({ isFetching: false, message: err.response.data.message })
             })
-        // fetch(url)
-        //     .then(response => {
-        //         if (!response.ok) {
-        //             throw new Error(`status ${response.status}`)
-        //         }
-        //         return response.json()
-        //     })
-        //     .then(json => {
-        //         setMessage(json.message)
-        //         setIsFetching(false)
-        //     })
-        //     .catch(e => {
-        //         setMessage(`API call failed: ${e}`)
-        //         setIsFetching(false)
-        //     })
     }
 
     render() {
+      console.log(this.state.message)
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    {process.env.NODE_ENV === "production" ? (
-                        <p>This is a production build from create-react-app.</p>
-                    ) : (
-                        <p>
-                            Edit <code>src/App.js</code> and save to reload.
-                        </p>
-                    )}
-                    <p>
-                        {"« "}
-                        <strong>{this.state.isFetching ? "Fetching message from API" : this.state.message}</strong>
-                        {" »"}
-                    </p>
-                </header>
-            </div>
+            <>
+                <Paper className="input-container">
+                    <InputBase id="add-scrape" placeholder="Scrape !" type="text" />
+                    <IconButton>
+                        <Icon>add</Icon>
+                    </IconButton>
+                </Paper>
+            </>
         )
     }
 }
