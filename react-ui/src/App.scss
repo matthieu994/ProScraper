@@ -1,0 +1,21 @@
+@import "colors.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+#root {
+    text-align: center;
+    background-color: $darkBackground;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: 8px;
+}
