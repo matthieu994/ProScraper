@@ -14,5 +14,13 @@ module.exports = new Schema({
     selector: {
         type: String,
         required: "Enter a selector"
+    },
+    count: {
+        type: Number,
+        default: 0
+    },
+    result: {
+        type: String,
+        default: "N/A"
     }
 })

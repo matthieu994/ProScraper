@@ -34,12 +34,17 @@ module.exports = {
     },
 
     edit(req, res) {
-        Item.findOneAndUpdate({ _id: req.params.itemId }, req.body, { new: true }, (err, item) => {
-            if (err) {
-                res.send(err)
+        Item.findOneAndUpdate(
+            { _id: req.params.itemId },
+            req.body,
+            { new: true, useFindAndModify: false },
+            (err, item) => {
+                if (err) {
+                    res.send(err)
+                }
+                res.json(item)
             }
-            res.json(item)
-        })
+        )
     },
 
     delete(req, res) {

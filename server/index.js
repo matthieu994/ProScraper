@@ -16,3 +16,5 @@ app.use("/api", itemRoutes)
 app.get("*", function(req, res) {
     res.sendFile(path.resolve(__dirname, "../react-ui/build", "index.html"))
 })
+
+require("./scrape")()
